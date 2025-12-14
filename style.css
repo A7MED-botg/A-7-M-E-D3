@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fff0f6, #ffe6eb);
+    overflow: hidden;
+    text-align: center;
+}
+
+/* لمعة أنثوية */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at top left, rgba(255,182,193,0.45), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(255,105,180,0.35), transparent 60%);
+    animation: shine 7s infinite ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes shine {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+    100% { opacity: 0.3; }
+}
+
+.container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+}
+
+/* العنوان */
+.title {
+    font-family: 'Reem Kufi Fun', cursive;
+    font-size: 72px;
+    color: #c9184a;
+    text-shadow: 0 0 20px #ff8fab;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #ff4d6d; }
+    to   { text-shadow: 0 0 35px #ff758f; }
+}
+
+/* القلب */
+.main-heart {
+    font-size: 150px;
+    color: #ff0a54;
+    animation: beat 1s infinite;
+    margin: 20px 0;
+}
+
+@keyframes beat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+    100% { transform: scale(1); }
+}
+
+/* العنوان الفرعي */
+.subtitle {
+    font-family: 'Amiri', serif;
+    font-size: 42px;
+    color: #9d0208;
+}
+
+/* النص */
+.quote {
+    font-family: 'Amiri', serif;
+    font-size: 30px;
+    color: #6a040f;
+    line-height: 1.9;
+    margin-top: 18px;
+}
+
+.secret {
+    font-family: 'Amiri', serif;
+    font-size: 26px;
+    color: #b5179e;
+    margin-top: 12px;
+}
+
+/* زر الحب */
+.love-btn {
+    margin-top: 25px;
+    padding: 14px 36px;
+    font-family: 'Reem Kufi Fun', cursive;
+    font-size: 22px;
+    color: #fff;
+    background: linear-gradient(45deg, #ff4d6d, #ff85a1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(255,77,109,0.4);
+    animation: pulse 2s infinite;
+}
+
+.love-btn:hover {
+    transform: scale(1.05);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 rgba(255,77,109,0.6); }
+    50% { box-shadow: 0 0 25px rgba(255,77,109,0.8); }
+    100% { box-shadow: 0 0 0 rgba(255,77,109,0.6); }
+}
+
+/* الرسالة المخفية */
+.hidden-love {
+    font-family: 'Amiri', serif;
+    font-size: 26px;
+    color: #b5179e;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.8s ease;
+}
+
+.hidden-love.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* الزينة */
+.decor {
+    position: absolute;
+    font-size: 26px;
+    animation: float 8s linear infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(110vh) scale(0.7);
+        opacity: 0;
+    }
+    50% { opacity: 1; }
+    100% {
+        transform: translateY(-10vh) scale(1.1);
+        opacity: 0;
+    }
+}
+
+.heart1 { left: 10%; animation-delay: 0s; }
+.heart2 { left: 80%; animation-delay: 3s; }
+.flower1 { left: 25%; animation-delay: 1s; }
+.flower2 { left: 50%; animation-delay: 4s; }
+.flower3 { left: 70%; animation-delay: 2s; }
+
+/* تحسين للموبايل */
+@media (max-width: 768px) {
+    .title { font-size: 46px; }
+    .main-heart { font-size: 100px; }
+    .subtitle { font-size: 26px; }
+    .quote { font-size: 20px; }
+    .secret { font-size: 20px; }
+    .hidden-love { font-size: 20px; }
+    .decor { font-size: 20px; }
+}
